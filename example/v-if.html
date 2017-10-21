@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-if&v-else&v-show</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+    <h1>v-if 判断是否加载</h1>
+    <div id="app">
+        <div v-if="isLogin">Hi, Aiden</div>
+        <div v-else="isLogin">please login in!</div>
+    </div>
+    <script>
+        var app = new Vue({
+            el:"#app",
+            data:{
+                isLogin:true
+            }
+        })
+//        var app.data.isLogin = false;
+        alert("1");
+    </script>
+</body>
+</html>

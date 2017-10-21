@@ -1,0 +1,14 @@
+{
+  "name": "mytest",
+  "version": "1.0.0",
+  "description": "my Vue practice",
+  "main": "index.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Aiden",
+  "license": "ISC"
+}
