@@ -10,16 +10,16 @@
     <div id="app">
         <div v-if="isLogin">Hi, Aiden</div>
         <div v-else="isLogin">please login in!</div>
+        <div v-show="isShow">v-show测试</div>
     </div>
     <script>
         var app = new Vue({
             el:"#app",
             data:{
-                isLogin:true
+                isLogin:true,
+                isShow:true
             }
-        })
-//        var app.data.isLogin = false;
-        alert("1");
+        });
     </script>
 </body>
 </html>
