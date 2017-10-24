@@ -9,8 +9,14 @@
 <h1>v-for实例</h1>
 <div id="app3">
     <ul>
-        <li v-for="item in items">
+        <li v-for="item in sortItems">
             {{item}}
+        </li>
+    </ul>
+    <hr />
+    <ul>
+        <li v-for="(student,index) in sortStudents">
+            {{index+1}}-{{student.name}}:{{student.age}}岁
         </li>
     </ul>
 </div>
@@ -18,17 +24,39 @@
     var app = new Vue({
         el:"#app3",
         data:{
-           items:[53,21,14,54,66,33,89]
+           items:[53,21,14,54,6,33,89],
+            students:[
+                {name:'Aiden',age:'23'},
+                {name:'Biden',age:'100'},
+                {name:'Ciden',age:'50'},
+                {name:'Diden',age:'77'}
+            ]
         },
         computed:{
-//            items:function () {
-//                return [1,2,3,4,5,6,7];
+//            items:function(){
+//                return [1,2,3,4,5,6,7]
 //            }
-            sortItems:function(){
-                return this.items.sort();
+//            不知道问题出在哪里，数组无法return1234567
+//            技术胖教程
+            sortItems:function () {
+                return this.items.sort(sortNumber);
+            },
+            sortStudents:function () {
+                return sortByKey(this.students,'age');
             }
         }
     })
+    function sortNumber(a,b) {
+        return a-b;
+    }
+    //数组对象方法排序:
+    function sortByKey(array,key){
+        return array.sort(function(a,b){
+            var x=a[key];
+            var y=b[key];
+            return ((x<y)?-1:((x>y)?1:0));
+        });
+    }
 </script>
 </body>
 </html>
