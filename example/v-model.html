@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-model</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+<h1>v-model</h1>
+<!--双向数据绑定-->
+<div id="app">
+    <p>原始数据：{{message}}</p>
+    <h3>v-model文本框</h3>
+    <p>
+        <input type="text" v-model="message">
+    </p>
+    <h3>v-model.lazy文本框</h3>
+    <!--焦点丢失时数据同步-->
+    <!--取代 imput 监听 change 事件。-->
+    <p>
+        <input type="text" v-model.lazy="message">
+    </p>
+    <h3>v-model.number文本框</h3>
+    <!--同步的数据只能是数字-->
+    <!--输入字符串转为数字-->
+    <p>
+        <input type="text" v-model.number="message">
+    </p>
+    <h3>v-model.trim文本框</h3>
+    <!--输入去掉首尾空格-->
+    <p>
+        <input type="text" v-model.trim="message">
+    </p>
+</div>
+<script type="text/javascript">
+    var app = new Vue({
+        el:"#app",
+        data:{
+            message:"hello Vue!"
+        }
+    })
+</script>
+</body>
+</html>
