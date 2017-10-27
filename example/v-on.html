@@ -24,7 +24,7 @@
         <span>减分</span><input type="text" @keyup.enter="onEnterReduce" v-model="my_score_reduce">
     </p>
     <hr>
-    <span>测试键盘↑事件</span><input type="text" v-on:keyup.38="onTest" v-model="test_score">
+    <span>测试键盘↑↓事件</span><input type="text" v-on:keyup.38="onTest1" v-on:keyup.40="onTest2" v-model="test_score">
 </div>
 <script type="text/javascript">
     var app = new Vue({
@@ -62,8 +62,13 @@
                     this.score = this.score - parseInt(this.my_score_reduce);
                 }
             },
-            onTest:function () {
+//            ↑+1
+            onTest1:function () {
                 this.test_score++;
+            },
+//            ↓-1
+            onTest2:function () {
+                this.test_score--;
             }
         }
     })
