@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-on实例</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+<h1>v-on实例</h1>
+<div id="app">
+    <h3>本场比赛得分:{{score}}</h3>
+    <p>
+        <button v-on:click="addScore">加分</button>
+        <input type="button" value="减分" v-on:click="reduceScore">
+    </p>
+    <p>
+        在input框中输入数字后按回车可增加对应分数
+    </p>
+    <p>
+        <span>加分</span><input type="text" @keyup.enter="onEnterAdd" v-model="my_score_add">
+        <!--v-on:等于@-->
+    </p>
+    <p>
+        <span>减分</span><input type="text" @keyup.enter="onEnterReduce" v-model="my_score_reduce">
+    </p>
+    <hr>
+    <span>测试键盘↑事件</span><input type="text" v-on:keyup.38="onTest" v-model="test_score">
+</div>
+<script type="text/javascript">
+    var app = new Vue({
+        el:"#app",
+        data:{
+            score:0,
+            my_score_add:0,
+            my_score_reduce:0,
+            test_score:0
+        },
+        methods:{
+//            点击button分数+1
+            addScore:function () {
+                this.score++;
+            },
+//            点击button分数-1
+            reduceScore:function () {
+                if (this.score == 0){
+                    alert("比分不能小于0！");
+                }
+                else {
+                    this.score--;
+                }
+            },
+//            回车增加input框中的值
+            onEnterAdd:function () {
+                this.score = this.score + parseInt(this.my_score_add);
+            },
+//            回车减少input框中的值
+            onEnterReduce:function () {
+                if (this.score - parseInt(this.my_score_reduce) <= 0){
+                    alert("比分不能小于0！");
+                }
+                else {
+                    this.score = this.score - parseInt(this.my_score_reduce);
+                }
+            },
+            onTest:function () {
+                this.test_score++;
+            }
+        }
+    })
+</script>
+</body>
+</html>
