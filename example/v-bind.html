@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-bind</title>
+    <script src="../js/vue.js"></script>
+    <style type="text/css">
+        #app img {
+            width: 200px;
+            height: 200px;
+        }
+        .classA {
+            color: red;
+        }
+        .classB {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+<h1>v-bind 实例</h1>
+<div id="app">
+    <!--用v-on和v-bind结合实现图片的切换-->
+    <button v-on:click="changeImge">change</button>
+    <br>
+    <img v-bind:src="imgSrc" alt="">
+    <hr>
+    <div>1、绑定class</div>
+</div>
+<script type="text/javascript">
+    var app = new Vue({
+        el:"#app",
+        data:{
+            imgSrc:"../assets/img/1.jpg"
+        },
+        methods:{
+            changeImge:function () {
+                if (this.imgSrc == "../assets/img/1.jpg"){
+                    this.imgSrc = "../assets/img/2.gif"
+                }
+                else {
+                    this.imgSrc = "../assets/img/1.jpg"
+                }
+            }
+        }
+    })
+</script>
+</body>
+</html>
