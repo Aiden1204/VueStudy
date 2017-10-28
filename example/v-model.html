@@ -9,7 +9,7 @@
 <h1>v-model</h1>
 <!--双向数据绑定-->
 <div id="app">
-    <p>原始数据：{{message}}</p>
+    <p>原始数据：{{message}}Aiden</p>
     <h3>v-model文本框</h3>
     <p>
         <input type="text" v-model="message">
@@ -31,12 +31,45 @@
     <p>
         <input type="text" v-model.trim="message">
     </p>
+    <hr>
+    <h3>文本域</h3>
+    <textarea name="" id="" cols="30" rows="10" v-model="message"></textarea>
+    <hr>
+    <h3>多选框绑定一个值</h3>
+    <!--是否选中会改变v-model中的值-->
+    <input type="checkbox" id="isTrue1" v-model="isTrue1">
+    <label for="isTrue1">选项1-{{isTrue1}}</label>
+    <input type="checkbox" id="isTrue2" v-model="isTrue2">
+    <label for="isTrue2">选项2-{{isTrue2}}</label>
+    <hr>
+    <h3>多选框绑定数组</h3>
+    <!--选中的checkbox中的值会出现在web_names数组中-->
+    <input type="checkbox" id="Aiden" value="Aiden" v-model="web_names">
+    <label for="Aiden">Aiden</label>
+    <input type="checkbox" id="Lucy" value="Lucy" v-model="web_names">
+    <label for="Lucy">Lucy</label>
+    <input type="checkbox" id="Habi" value="Habi" v-model="web_names">
+    <label for="Habi">Habi</label>
+    <input type="checkbox" id="Gery" value="Gery" v-model="web_names">
+    <label for="Gery">Gery</label>
+    <p>{{web_names}}</p>
+    <hr>
+    <h3>单选框的绑定</h3>
+    <input type="radio" id="one" value="男" v-model="sex">
+    <label for="one">男</label>
+    <input type="radio" id="two" value="女" v-model="sex">
+    <label for="two">女</label>
+    <p>已选择的性别是 {{sex}}  </p>
 </div>
 <script type="text/javascript">
     var app = new Vue({
         el:"#app",
         data:{
-            message:"hello Vue!"
+            message:"hello Vue!",
+            isTrue1:true,
+            isTrue2:true,
+            web_names:[],
+            sex:"男"
         }
     })
 </script>
