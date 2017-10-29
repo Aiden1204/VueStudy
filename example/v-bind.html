@@ -21,25 +21,51 @@
 <h1>v-bind 实例</h1>
 <div id="app">
     <!--用v-on和v-bind结合实现图片的切换-->
-    <button v-on:click="changeImge">change</button>
+    <button v-on:click="changeImg">changeImg</button>
     <br>
     <img v-bind:src="imgSrc" alt="">
     <hr>
-    <div>1、绑定class</div>
+    <div :class="className">1、绑定class</div>
+    <br>
+    <button @click="changeClass">changeClass</button>
+    <hr>
+    <div :class="{classA:isOk}">判断class</div>
+    <button @click="trueOrFalse">改变ture和false</button>
 </div>
 <script type="text/javascript">
     var app = new Vue({
         el:"#app",
         data:{
-            imgSrc:"../assets/img/1.jpg"
+            imgSrc:"../assets/img/1.jpg",
+            className:"classA",
+            isOk:true
         },
         methods:{
-            changeImge:function () {
+//            改img的URL
+            changeImg:function () {
                 if (this.imgSrc == "../assets/img/1.jpg"){
-                    this.imgSrc = "../assets/img/2.gif"
+                    this.imgSrc = "../assets/img/2.gif";
                 }
                 else {
-                    this.imgSrc = "../assets/img/1.jpg"
+                    this.imgSrc = "../assets/img/1.jpg";
+                }
+            },
+//            改class
+            changeClass:function () {
+                if (this.className == "classA"){
+                    this.className = "classB";
+                }
+                else {
+                    this.className = "classA";
+                }
+            },
+//            判断class
+            trueOrFalse:function () {
+                if (this.isOk == true){
+                    this.isOk = false;
+                }
+                else {
+                    this.isOk = true;
                 }
             }
         }
