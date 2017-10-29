@@ -15,6 +15,9 @@
         .classB {
             color: blue;
         }
+        .classC {
+            font-size: 30px;
+        }
     </style>
 </head>
 <body>
@@ -31,6 +34,17 @@
     <hr>
     <div :class="{classA:isOk}">判断class</div>
     <button @click="trueOrFalse">改变ture和false</button>
+    <br>
+    <input type="checkbox" id="isOk" v-model="isOk">
+    <label for="isOk">isOk = {{isOk}}</label>
+    <hr>
+    <label for="" :class="[classC,classB]">class数组</label>
+    <hr>
+    <label for="" :class="isOk?classC:classB">三元运算符</label>
+    <hr>
+    <div :style="{color:myColor}">绑定style</div>
+    <hr>
+    <div :style="duiXiang">绑定Style对象</div>
 </div>
 <script type="text/javascript">
     var app = new Vue({
@@ -38,7 +52,14 @@
         data:{
             imgSrc:"../assets/img/1.jpg",
             className:"classA",
-            isOk:true
+            isOk:true,
+            classC:"classC",
+            classB:"classB",
+            myColor:"red",
+            duiXiang:{
+                color:"green",
+                fontSize:"40px"
+            }
         },
         methods:{
 //            改img的URL
