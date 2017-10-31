@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test1</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+    <h3>test1 Vue.directive</h3>
+    <hr>
+    <div id="app">
+        <p>页面加载时焦点在这个input框</p>
+        <input v-focus type="text">
+    </div>
+    <script type="text/javascript">
+        Vue.directive("focus",{
+            // 指令的定义
+            inserted:function (el) {
+                el.focus();
+            }
+        });
+        var app = new Vue({
+            el:"#app"
+        })
+    </script>
+</body>
+</html>
