@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue.set</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+<h1>vue.set</h1>
+<div id="app">
+    {{content}}
+    <p>
+        <button v-on:click="add">add</button>
+    </p>
+</div>
+<script type="text/javascript">
+    var outData = {
+        content:1,
+        goods:"car"
+    };
+    var app = new Vue({
+        el:"#app",
+        data:outData,
+        methods:{
+            add:function () {
+                this.content++;
+            }
+        }
+    })
+</script>
+</body>
+</html>

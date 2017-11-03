@@ -15,8 +15,9 @@
     <script type="text/javascript">
         Vue.directive("focus",{
             // 指令的定义
-            inserted:function (el) {
+            inserted:function (el,name) {
                 el.focus();
+                console.log(name);
             }
         });
         var app = new Vue({
