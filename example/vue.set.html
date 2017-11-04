@@ -10,22 +10,52 @@
 <div id="app">
     {{content}}
     <p>
-        <button v-on:click="add">add</button>
+        <button onclick="add1()">add1</button>
+        <button onclick="add2()">add2</button>
+        <button onclick="add3()">add3</button>
     </p>
+    <hr>
+    <button onclick="change()">change</button>
+    <ul>
+        <li v-for="item in arr">{{item}}</li>
+    </ul>
 </div>
+
 <script type="text/javascript">
+//    由于Javascript的限制，Vue不能自动检测以下变动的数组。
+
+//    *当你利用索引直接设置一个项时，vue不会为我们自动更新。
+
+//    *当你修改数组的长度时，vue不会为我们自动更新。
+    function add1() {
+        Vue.set(outData,"content",2);
+    }
+    function add2() {
+        app.content++;
+    }
+    function add3() {
+        outData.content++;
+    }
+    function change() {
+//        以下vue无法自动更新
+//        app.arr[1] = "ddd";
+
+//        以下这个有效
+        Vue.set(app.arr,1,"ddd");
+    }
     var outData = {
         content:1,
-        goods:"car"
+        goods:"car",
+        arr:["aaa","bbb","ccc"]
     };
     var app = new Vue({
         el:"#app",
-        data:outData,
-        methods:{
-            add:function () {
-                this.content++;
-            }
-        }
+        data:outData
+//        methods:{
+//            add:function () {
+//                this.content++;
+//            }
+//        }
     })
 </script>
 </body>
