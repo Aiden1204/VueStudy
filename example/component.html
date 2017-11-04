@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>component</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+<h1>component组件</h1>
+    <!--directive指令定义的是标签属性，component组件定义的是标签-->
+<div id="app">
+   <aiden></aiden>
+    <!--dota是局部组件，所以在这里显示不出来-->
+    <dota></dota>
+</div>
+<hr>
+<div id="ppa">
+    <dota></dota>
+    <aiden></aiden>
+
+</div>
+<script type="text/javascript">
+//    构造全局组件
+    Vue.component("aiden",{
+        template:'<div style="color:red;">我是全局的aiden组件</div>'
+    })
+    var app = new Vue({
+        el:"#app"
+    })
+
+//    构造局部组件
+    var ppa = new Vue({
+        el:"#ppa",
+        components:{
+            "dota":{//这里必须是字符串
+                template:'<div style="color:red;">我是局部的dota组件</div>'
+            }
+        }
+    })
+</script>
+</body>
+</html>
