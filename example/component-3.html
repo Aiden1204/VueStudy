@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>component-3</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+<h1>component-3 父子组件关系</h1>
+<hr>
+<div id="ppa">
+    <aiden></aiden>
+</div>
+<script type="text/javascript">
+    var cityComponent = {
+        template:`
+            <div style="color: green;">Hongkou of Shanghai!</div>
+            `
+    };
+//    在构造器外面声明了一个局部组件
+    var aidenComponent = {
+//        注意：vue模板只能有一个根对象，所以必须用一个标签来包裹模板中全部的元素
+        template:`
+            <div>
+                <div style="color: red;">Aiden from Shanghai!</div>
+                <city></city>
+            </div>
+            `,
+        components:{
+            "city":cityComponent
+        }
+    };
+
+    //    构造局部组件
+    var ppa = new Vue({
+        el:"#ppa",
+        components:{
+            "aiden":aidenComponent
+        }
+    })
+</script>
+</body>
+</html>

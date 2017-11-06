@@ -6,7 +6,7 @@
     <script src="../js/vue.js"></script>
 </head>
 <body>
-<h1>component-2  props属性</h1>
+<h1>component-2 props属性</h1>
 <hr>
 <div id="ppa">
     <dota v-bind:here="message"></dota>
@@ -21,11 +21,14 @@
         components:{
             "dota":{//这里必须是字符串
                 template:'<div style="color:red;">dota from {{here}}</div>',
-//                注册选项
+//                注册选项/挂载属性
                 props:["here"]
             }
         }
     })
+    ppa.message = "America";
+//    component 组件
+//    template 模板
 </script>
 </body>
 </html>
