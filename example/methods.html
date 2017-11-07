@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>methods</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+<h1>Methods Option  方法选项</h1>
+<div id="app">
+    {{result}}<br>
+    a:{{a}}
+    <p><button @click="add(2,$event)">add</button></p>
+    <p><button @click="add()">add</button></p>
+    <!--这里要加native-->
+    <btn @click.native="add(3,$event)">组件add</btn>
+</div>
+    <button onclick="app.add(4)">外部add</button>
+<script type="text/javascript">
+    var btn = {
+        template:`<button>组件add</button>`
+    };
+    var app = new Vue({
+        el:"#app",
+        data:{
+            result:0,
+            a:1
+        },
+        components:{
+            "btn":btn
+        },
+        methods:{
+            add:function (num,event) {
+                if(num != ''){
+                    this.result += num;
+                }
+                else {
+                    alert("num不能为空");
+                }
+                console.log(num);
+                console.log(event);
+            }
+        }
+    })
+</script>
+</body>
+</html>
