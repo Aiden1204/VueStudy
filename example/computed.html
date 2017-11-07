@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>computed Option</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+<h1>computed Option  计算选项</h1>
+<!--computed 的作用主要是对原数据进行改造输出。改造输出：包括格式的编辑，大小写转换，顺序重排，添加符号……。-->
+<hr>
+<div id="app">
+    {{newPrice}}
+    <br>
+    {{price}}
+    <hr>
+    <ul>
+        <li v-for="news in reverseNews">{{news.title}} - {{news.date}}</li>
+    </ul>
+</div>
+<script type="text/javascript">
+    var newsList = [
+        {title:'习近平就美国得州枪击事件向特朗普致慰问电', date:'2017/11/7'},
+        {title:'李克强会见芬兰议长 张德江会见外宾  俞正声出席峰会', date:'2017/11/8'},
+        {title:'外交部就李克强出席东亚合作领导人会议举行吹风会', date:'2017/11/14'},
+        {title:'领航新征程 中央宣讲团在各地宣讲十九大精神', date:'2017/11/16'}
+    ];
+    var app = new Vue({
+        el:"#app",
+        data:{
+            price:100,
+            newsList:newsList
+        },
+        computed:{
+            newPrice:function () {
+                return "￥" + this.price + "元";
+            },
+            reverseNews:function () {
+                return this.newsList.reverse();
+            }
+        }
+    })
+</script>
+</body>
+</html>
