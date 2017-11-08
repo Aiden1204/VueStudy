@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>mixins</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+<h1>Mixins 混入选项操作</h1>
+<hr>
+<div id="app">
+    <p>num:{{num}}</p>
+    <p><button @click="add">add</button></p>
+</div>
+<script type="text/javascript">
+    var addConsole = {
+//        updated是一个生命周期
+      updated:function () {
+            console.log("数据变化成了" + this.num);
+      }  
+    };
+
+//    全局API的混入方式
+    Vue.mixin({
+        updated:function () {
+            console.log("我是全局的混入");
+        }
+    });
+
+    var app = new Vue({
+        el:"#app",
+        data:{
+            num:1
+        },
+        methods:{
+            add:function () {
+                this.num++;
+            }
+        },
+//        mixins会比原生的先执行
+        updated:function () {
+            console.log("我是原生的updated");
+        },
+        mixins:[addConsole]
+    })
+</script>
+</body>
+</html>
