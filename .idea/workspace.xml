@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cccdd9e3-fdbb-41d2-8232-1f8fc0346f82" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/mixins.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example/extendsOption.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
     </list>
@@ -21,18 +21,28 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="853">
-              <caret line="39" column="35" lean-forward="false" selection-start-line="39" selection-start-column="35" selection-end-line="39" selection-end-column="35" />
+            <state relative-caret-position="882">
+              <caret line="40" column="42" lean-forward="true" selection-start-line="40" selection-start-column="29" selection-end-line="40" selection-end-column="42" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mixins.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="extendsOption.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/example/extendsOption.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="435">
+              <caret line="15" column="31" lean-forward="true" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mixins.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/example/mixins.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="551">
-              <caret line="25" column="35" lean-forward="false" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
+            <state relative-caret-position="824">
+              <caret line="47" column="7" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="47" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -58,21 +68,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="v-model.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/example/v-model.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="377">
-              <caret line="13" column="7" lean-forward="true" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="HelloWorld.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/example/HelloWorld.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="116">
-              <caret line="4" column="25" lean-forward="true" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
+            <state relative-caret-position="290">
+              <caret line="10" column="19" lean-forward="true" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -141,8 +141,9 @@
         <option value="$PROJECT_DIR$/example/computed.html" />
         <option value="$PROJECT_DIR$/example/methods.html" />
         <option value="$PROJECT_DIR$/example/watch.html" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/example/mixins.html" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/example/extendsOption.html" />
       </list>
     </option>
   </component>
@@ -234,12 +235,12 @@
       <workItem from="1509977518047" duration="4750000" />
       <workItem from="1510019953761" duration="449000" />
       <workItem from="1510020442058" duration="5771000" />
-      <workItem from="1510171922651" duration="3014000" />
+      <workItem from="1510171922651" duration="3727000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16776000" />
+    <option name="totallyTimeSpent" value="17489000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
@@ -660,24 +661,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="853">
-          <caret line="39" column="35" lean-forward="false" selection-start-line="39" selection-start-column="35" selection-end-line="39" selection-end-column="35" />
+        <state relative-caret-position="882">
+          <caret line="40" column="42" lean-forward="true" selection-start-line="40" selection-start-column="29" selection-end-line="40" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/example/HelloWorld.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="4" column="25" lean-forward="true" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
+        <state relative-caret-position="290">
+          <caret line="10" column="19" lean-forward="true" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/example/mixins.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="25" column="35" lean-forward="false" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
+        <state relative-caret-position="824">
+          <caret line="47" column="7" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="47" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/extendsOption.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="15" column="31" lean-forward="true" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
           <folding />
         </state>
       </provider>
