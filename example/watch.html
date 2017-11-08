@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>watch</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+<h1>Watch 选项 监控数据</h1>
+<hr>
+<div id="app">
+    <p>当前温度：{{wendu}}</p>
+    <p>穿衣建议：{{chuanyi}}</p>
+    <p>
+        <button @click="add">升高</button>
+        <button @click="reduce">减少</button>
+    </p>
+</div>
+<script type="text/javascript">
+    var chuanyiArr = ["T恤","夹克长裙","羽绒服"];
+    var app = new Vue({
+        el:"#app",
+        data:{
+            wendu:14,
+            chuanyi:'夹克长裙'
+        },
+        methods:{
+            add:function () {
+                this.wendu+=3;
+            },
+            reduce:function () {
+                this.wendu-=3;
+            }
+        },
+//        写在构造器里面的watch
+//        watch:{
+//            wendu:function (newVal,oldVal) {
+//                if(newVal >= 26){
+//                    this.chuanyi = chuanyiArr[0];
+//                }
+//                else if(newVal < 26 && newVal > 0){
+//                    this.chuanyi = chuanyiArr[1];
+//                }
+//                else {
+//                    this.chuanyi = chuanyiArr[2];
+//                }
+//            }
+//        }
+    })
+//    用实例属性写watch监控
+    app.$watch('wendu',function (newVal,oldVal) {
+        if(newVal >= 26){
+            this.chuanyi = chuanyiArr[0];
+        }
+        else if(newVal < 26 && newVal > 0){
+            this.chuanyi = chuanyiArr[1];
+        }
+        else {
+            this.chuanyi = chuanyiArr[2];
+        }
+    })
+</script>
+</body>
+</html>
