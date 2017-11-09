@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>example03</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+<h1>实例事件</h1>
+<hr>
+<div id="app">
+    <p>num:{{num}}</p>
+    <p><button @click="add">add</button></p>
+
+</div>
+    <p><button onclick="reduce()">reduce</button></p>
+    <p><button onclick="reduceOnce()">reduceOnce</button></p>
+    <p><button onclick="off()">offReduce</button></p>
+<script type="text/javascript">
+    var app = new Vue({
+        el:"#app",
+        data:{
+            num:0
+        },
+        methods:{
+            add:function () {
+                this.num++;
+            }
+        }
+    });
+//      $on接收两个参数，第一个参数是调用时的事件名称，第二个参数是一个匿名方法。
+//      如果按钮在作用域外部，可以利用$emit来执行。
+    app.$on("reduce",function () {
+        console.log("执行了reduce()");
+        this.num--;
+    });
+    function reduce() {
+        app.$emit("reduce");
+    }
+
+//    $once执行一次的事件
+    app.$once("reduceOnce",function () {
+        console.log("只执行一次reduce()");
+        this.num--;
+    });
+    function reduceOnce() {
+        app.$emit("reduceOnce");
+    }
+
+//    $off关闭事件
+    function off(){
+        app.$off('reduce');
+    }
+</script>
+</body>
+</html>
