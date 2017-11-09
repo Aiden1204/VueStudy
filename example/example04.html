@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>example04</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+<h1>内置组件 -slot讲解</h1>
+<hr>
+<div id="app">
+    <aiden>
+        <span slot="bolgUrl">{{aidenData.bolgUrl}}</span>
+        <span slot="netName">{{aidenData.netName}}</span>
+        <span slot="skill">{{aidenData.skill}}</span>
+    </aiden>
+</div>
+<template id="tep">
+    <div>
+        <p>博客地址：<slot name="bolgUrl"></slot></p>
+        <p>网名：<slot name="netName"></slot></p>
+        <p>技术类型：<slot name="skill"></slot></p>
+    </div>
+</template>
+<script type="text/javascript">
+    var aiden = {
+        template:"#tep"
+    };
+    var app = new Vue({
+        el:"#app",
+        data:{
+            aidenData:{
+                bolgUrl:'https://www.baidu.com',
+                netName:'Aiden',
+                skill:'Web前端'
+            }
+        },
+        components:{
+            "aiden":aiden
+        }
+    })
+</script>
+</body>
+</html>
